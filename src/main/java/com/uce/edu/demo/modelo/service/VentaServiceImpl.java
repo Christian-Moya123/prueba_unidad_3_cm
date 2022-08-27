@@ -76,27 +76,34 @@ public class VentaServiceImpl implements IVentaService{
 	}
 
 	@Override
-	public List<ProductoReporteDto> reporteVenta(LocalDateTime fecha) {
+	public List<ProductoReporteDto> reporteProductoVendido() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<ProductoReporteDto> reporteVenta(LocalDateTime fecha, String categoria, Integer cantidad) {
+		// TODO Auto-generated method stub
+		List<ProductoReporteDto> aux = this.tDetalleVentaRepository.reporteVenta(fecha, categoria, cantidad);
+		return aux.stream().filter(item -> {
+			return item.getCategoria().equals(categoria);
+		
+		}).map(item ->{
+			return new ProductoReporteDto(item.getCodigoBarras(), 
+					item.getCantidad(), 
+					item.getCategoria(),
+					item.getPrecioUnitario(),
+					item.getSubTotal()
+					);
+					
+		}).toList();
+		
+		
 	}
 
 	
 
-	@Override
-	public List<ProductoReporteDto> reporteVenta(Integer cantidad) {
-		// TODO Auto-generated method stub
-		List<ProductoReporteDto> aux = this.tDetalleVentaRepository.reporteProductoVendido();
-		return aux;
-		
-			
-	}
 
-	@Override
-	public List<ProductoReporteDto> reporteVenta(String categoria) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	
 

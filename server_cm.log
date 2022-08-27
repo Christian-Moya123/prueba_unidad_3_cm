@@ -1967,3 +1967,135 @@ Caused by: org.hibernate.MappingException: Unknown entity: com.uce.edu.demo.mode
 2022-08-26 19:45:54.668  INFO 27992 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-08-26 19:45:54.671  INFO 27992 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-08-26 19:45:54.677  INFO 27992 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-26 20:19:47.754  INFO 24996 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : Starting PruebaUnidad3CmApplication using Java 17.0.2 on LAPTOP-EU04Q2UC with PID 24996 (D:\6 semestr\programacion avanzada 2\Spring\prueba_unidad3_cm\target\classes started by Usuario in D:\6 semestr\programacion avanzada 2\Spring\prueba_unidad3_cm)
+2022-08-26 20:19:47.756  INFO 24996 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-08-26 20:19:47.821  INFO 24996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-26 20:19:48.367  INFO 24996 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-26 20:19:48.389  INFO 24996 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2022-08-26 20:19:48.880  INFO 24996 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-26 20:19:48.954  INFO 24996 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-26 20:19:49.172  INFO 24996 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-26 20:19:49.313  INFO 24996 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-26 20:19:49.567  INFO 24996 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-26 20:19:49.591  INFO 24996 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-08-26 20:19:50.600  INFO 24996 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-26 20:19:50.611  INFO 24996 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-26 20:19:50.840  INFO 24996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-26 20:19:50.869  INFO 24996 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : Started PruebaUnidad3CmApplication in 3.609 seconds (JVM running for 4.878)
+2022-08-26 20:19:51.182  INFO 24996 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-26 20:19:51.214 ERROR 24996 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:774) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.uce.edu.demo.PruebaUnidad3CmApplication.main(PruebaUnidad3CmApplication.java:33) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+Caused by: java.lang.NullPointerException: Cannot invoke "com.uce.edu.demo.modelo.Producto.getStock()" because "producto" is null
+	at com.uce.edu.demo.modelo.service.VentaServiceImpl.insertar(VentaServiceImpl.java:55) ~[classes/:na]
+	at com.uce.edu.demo.modelo.service.VentaServiceImpl$$FastClassBySpringCGLIB$$faaa983b.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.22.jar:5.3.22]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.22.jar:5.3.22]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.22.jar:5.3.22]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.22.jar:5.3.22]
+	at com.uce.edu.demo.modelo.service.VentaServiceImpl$$EnhancerBySpringCGLIB$$6b55f989.insertar(<generated>) ~[classes/:na]
+	at com.uce.edu.demo.PruebaUnidad3CmApplication.run(PruebaUnidad3CmApplication.java:81) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771) ~[spring-boot-2.7.3.jar:2.7.3]
+	... 10 common frames omitted
+
+2022-08-26 20:19:51.219  INFO 24996 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-26 20:19:51.222  INFO 24996 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-26 20:19:51.228  INFO 24996 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-26 20:20:26.947  INFO 24540 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : Starting PruebaUnidad3CmApplication using Java 17.0.2 on LAPTOP-EU04Q2UC with PID 24540 (D:\6 semestr\programacion avanzada 2\Spring\prueba_unidad3_cm\target\classes started by Usuario in D:\6 semestr\programacion avanzada 2\Spring\prueba_unidad3_cm)
+2022-08-26 20:20:26.948  INFO 24540 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-08-26 20:20:27.025  INFO 24540 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-26 20:20:27.589  INFO 24540 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-26 20:20:27.614  INFO 24540 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
+2022-08-26 20:20:28.086  INFO 24540 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-26 20:20:28.150  INFO 24540 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-26 20:20:28.393  INFO 24540 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-26 20:20:28.531  INFO 24540 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-26 20:20:28.807  INFO 24540 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-26 20:20:28.830  INFO 24540 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-08-26 20:20:29.849  INFO 24540 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-26 20:20:29.859  INFO 24540 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-26 20:20:30.097  INFO 24540 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-26 20:20:30.127  INFO 24540 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : Started PruebaUnidad3CmApplication in 3.673 seconds (JVM running for 4.978)
+2022-08-26 20:20:30.426  INFO 24540 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : producto: 
+2022-08-26 20:20:30.426  INFO 24540 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : codigo de barras 003 nombre ccc stock 46
+2022-08-26 20:20:30.439  INFO 24540 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-26 20:20:30.444  INFO 24540 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-26 20:20:30.455  INFO 24540 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-26 20:21:16.396  INFO 26392 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : Starting PruebaUnidad3CmApplication using Java 17.0.2 on LAPTOP-EU04Q2UC with PID 26392 (D:\6 semestr\programacion avanzada 2\Spring\prueba_unidad3_cm\target\classes started by Usuario in D:\6 semestr\programacion avanzada 2\Spring\prueba_unidad3_cm)
+2022-08-26 20:21:16.398  INFO 26392 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-08-26 20:21:16.469  INFO 26392 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-26 20:21:17.020  INFO 26392 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-26 20:21:17.045  INFO 26392 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+2022-08-26 20:21:17.539  INFO 26392 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-26 20:21:17.606  INFO 26392 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-26 20:21:17.838  INFO 26392 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-26 20:21:17.981  INFO 26392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-26 20:21:18.263  INFO 26392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-26 20:21:18.286  INFO 26392 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-08-26 20:21:19.268  INFO 26392 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-26 20:21:19.279  INFO 26392 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-26 20:21:19.524  INFO 26392 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-26 20:21:19.553  INFO 26392 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : Started PruebaUnidad3CmApplication in 3.662 seconds (JVM running for 4.95)
+2022-08-26 20:21:19.558  INFO 26392 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-26 20:21:19.589 ERROR 26392 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token "/", delete this token
+
+	at com.uce.edu.demo.PruebaUnidad3CmApplication.run(PruebaUnidad3CmApplication.java:81) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:771) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.uce.edu.demo.PruebaUnidad3CmApplication.main(PruebaUnidad3CmApplication.java:33) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.3.jar:2.7.3]
+
+2022-08-26 20:21:19.594  INFO 26392 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-26 20:21:19.598  INFO 26392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-26 20:21:19.604  INFO 26392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-26 20:21:27.042  INFO 1320 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : Starting PruebaUnidad3CmApplication using Java 17.0.2 on LAPTOP-EU04Q2UC with PID 1320 (D:\6 semestr\programacion avanzada 2\Spring\prueba_unidad3_cm\target\classes started by Usuario in D:\6 semestr\programacion avanzada 2\Spring\prueba_unidad3_cm)
+2022-08-26 20:21:27.044  INFO 1320 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-08-26 20:21:27.109  INFO 1320 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-26 20:21:27.669  INFO 1320 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-26 20:21:27.697  INFO 1320 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2022-08-26 20:21:28.164  INFO 1320 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-26 20:21:28.229  INFO 1320 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-26 20:21:28.472  INFO 1320 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-26 20:21:28.603  INFO 1320 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-26 20:21:28.878  INFO 1320 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-26 20:21:28.899  INFO 1320 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-08-26 20:21:29.886  INFO 1320 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-26 20:21:29.897  INFO 1320 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-26 20:21:30.129  INFO 1320 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-26 20:21:30.157  INFO 1320 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : Started PruebaUnidad3CmApplication in 3.731 seconds (JVM running for 5.112)
+2022-08-26 20:21:30.517  INFO 1320 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : producto: 
+2022-08-26 20:21:30.518  INFO 1320 --- [restartedMain] c.u.edu.demo.PruebaUnidad3CmApplication  : codigo de barras 003 nombre ccc stock 25
+2022-08-26 20:21:30.529  INFO 1320 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-26 20:21:30.533  INFO 1320 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-26 20:21:30.541  INFO 1320 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

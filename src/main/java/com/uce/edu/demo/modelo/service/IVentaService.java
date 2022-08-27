@@ -12,11 +12,11 @@ import com.uce.edu.demo.modelo.sencillo.ProductoVentaDto;
 
 public interface IVentaService {
 	Venta insertar(String cedula, String numero, List<ProductoVentaDto> productos);
+	public List<ProductoReporteDto> reporteProductoVendido();
 	
-	List<ProductoReporteDto> reporteVenta(LocalDateTime fecha);
-	List<ProductoReporteDto> reporteVenta(String categoria);
-	List<ProductoReporteDto> reporteVenta(Integer cantidad);
+	List<ProductoReporteDto> reporteVenta(LocalDateTime fecha, String categoria, Integer cantidad);
 	
+
 	
 
 }

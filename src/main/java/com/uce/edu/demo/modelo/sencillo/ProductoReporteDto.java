@@ -5,50 +5,61 @@ import java.time.LocalDateTime;
 
 public class ProductoReporteDto extends ProductoVentaDto{
 	
-	private LocalDateTime fecha;
-	
 	private String categoria;
 	
-	private Integer cantidad;
+	private BigDecimal precioUnitario;
+	
+	private BigDecimal subTotal;
 
-	
-	
-	public ProductoReporteDto(String categoria, LocalDateTime fecha,String codigoBarras, Integer cantidad, String nombre, BigDecimal precio, BigDecimal subtotal) {
-		super();
-		this.fecha = fecha;
+
+
+	public ProductoReporteDto(String codigoBarras, Integer cantidad, String categoria, BigDecimal precioUnitario,BigDecimal subTotal) {
+		super(codigoBarras, cantidad);
 		this.categoria = categoria;
-		this.cantidad = cantidad;
+		this.precioUnitario = precioUnitario;
+		this.subTotal = subTotal;
+		
 	}
+
 
 	//gey y set
-	public ProductoReporteDto() {
-		super();
-	}
-
-	public LocalDateTime getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(LocalDateTime fecha) {
-		this.fecha = fecha;
-	}
 
 	public String getCategoria() {
 		return categoria;
 	}
 
+
+
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
 
-	public Integer getCantidad() {
-		return cantidad;
+
+
+	public BigDecimal getPrecioUnitario() {
+		return precioUnitario;
 	}
 
-	public void setCantidad(Integer cantidad) {
-		this.cantidad = cantidad;
+
+
+	public void setPrecioUnitario(BigDecimal precioUnitario) {
+		this.precioUnitario = precioUnitario;
 	}
 
+
+
+	public BigDecimal getSubTotal() {
+		return subTotal;
+	}
+
+
+
+	public void setSubTotal(BigDecimal subTotal) {
+		this.subTotal = subTotal;
+	}
+
+	
+	
 	
 	
 	

@@ -13,5 +13,7 @@ public interface IDetalleVentaRepository {
 	public DetalleVenta ingreso(DetalleVenta detalleVentacto);
 	public List<ProductoReporteDto> reporteProductoVendido();
 	
+	List<ProductoReporteDto> reporteVenta(LocalDateTime fecha, String categoria, Integer cantidad);
+	
 	
 }

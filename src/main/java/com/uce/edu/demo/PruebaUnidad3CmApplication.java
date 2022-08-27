@@ -1,6 +1,7 @@
 package com.uce.edu.demo;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.uce.edu.demo.modelo.Producto;
+import com.uce.edu.demo.modelo.sencillo.ProductoReporteDto;
 import com.uce.edu.demo.modelo.sencillo.ProductoStockDto;
 import com.uce.edu.demo.modelo.sencillo.ProductoVentaDto;
 import com.uce.edu.demo.modelo.service.IProductoService;
@@ -58,32 +60,34 @@ public class PruebaUnidad3CmApplication implements CommandLineRunner{
 		pro3.setCodigoBarras("003");
 		pro3.setPrecio(new BigDecimal(60));
 		pro3.setStock(11);
-		
+		/*
 		this.productoService.ingresoPro(pro1);
 		this.productoService.ingresoPro(pro2);
 		this.productoService.ingresoPro(pro3);
 		
 		this.productoService.ingresoPro(pro1);
 		this.productoService.ingresoPro(pro2);
-		this.productoService.ingresoPro(pro3);
+		this.productoService.ingresoPro(pro3);*/
 		
 		
 		//2.Realizar Venta:
 		List<ProductoVentaDto> productoVenta = new ArrayList<>();
-		ProductoVentaDto producto1 = new ProductoVentaDto("001", 30);
-		ProductoVentaDto producto2 = new ProductoVentaDto("002", 19);
-		ProductoVentaDto producto3 = new ProductoVentaDto("003", 20);
+		ProductoVentaDto producto1 = new ProductoVentaDto("001", 31);
+		ProductoVentaDto producto2 = new ProductoVentaDto("002", 191);
+		ProductoVentaDto producto3 = new ProductoVentaDto("003", 21);
 		productoVenta.add(producto1);
 		productoVenta.add(producto2);
 		productoVenta.add(producto3);
 		
 		
-		this.ventaService.insertar("0000A", "0001", productoVenta);
+		//this.ventaService.insertar("0000C", "0003", productoVenta);
 		
 		
 		
+		//3.Reporte de Ventas:
 		
-		
+		List<ProductoReporteDto> productoa = this.ventaService.reporteVenta(LocalDateTime.of(2022, 8, 26, 18, 42,41,729686), "11A", 9);
+		productoa.forEach(item ->  logger.info(item.getCodigoBarras() +" " + item.getCategoria() + " " + item.getCodigoBarras()+ " " + item.getCantidad() +"  " + item.getSubTotal()));
 		
 		
 		//4.Consultar Stock:

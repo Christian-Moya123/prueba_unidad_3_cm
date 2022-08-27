@@ -36,8 +36,6 @@ public class ProductoRepositoryImpl implements IProductoRepository{
 		Query jpqlQuery = this.entityManager.createQuery("SELECT new com.uce.edu.demo.modelo.sencillo.ProductoStockDto(p.codigoBarras, p.nombre, p.stock, p.categoria) FROM Producto p where p.codigoBarras = :datoCodigo");
 		jpqlQuery.setParameter("datoCodigo", codigo);
 		
-		
-		
 		return (ProductoStockDto) jpqlQuery.getSingleResult();	
 		
 	}
